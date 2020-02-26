@@ -61,9 +61,9 @@ public class AdvancedInstallerFragment extends Fragment {
         mTabLayout = view.findViewById(R.id.tab_layout);
 
         tabsAdapter = new TabsAdapter(getChildFragmentManager());
-        tabsAdapter.notifyDataSetChanged();
         mPager.setAdapter(tabsAdapter);
         mTabLayout.setupWithViewPager(mPager);
+        tabsAdapter.notifyDataSetChanged();
 
         setHasOptionsMenu(true);
         new JSONParser().execute();
